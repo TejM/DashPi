@@ -1,25 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
+import camera from './camera.svg';
+import react from './react.svg';
+import { IconButton } from '@material-ui/core';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      {/* This is placekeeper code, to verify that django is indeed rendering
-      the react front end */}
-      <div className='center-column'>
-        <div className='item-row'>
-          <span>One</span>
+      <header className="App-header">
+        <img src={react} className="App-logo" alt="react" />
+        <div>
+          <IconButton color="primary" aria-label="camera view">
+            <img src={camera} className="Camera-logo" alt="camera" />           
+          </IconButton>
         </div>
-
-        <div className='item-row'>
-          <span>Two</span>
-        </div>
-
-        <div className='item-row'>
-          <span>Three</span>
-        </div>
-      </div>
+        <div>
+          Icon from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+        </div> 
+      </header>
     </div>
   );
 }
