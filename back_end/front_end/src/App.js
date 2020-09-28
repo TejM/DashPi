@@ -9,6 +9,9 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={react} className="App-logo" alt="react" />
+        <p>
+          { Date().toLocaleString() }
+        </p>
         <div>
           <IconButton color="primary" aria-label="camera view">
             <img src={camera} className="Camera-logo" alt="camera" />           
