@@ -1,28 +1,31 @@
-import React from 'react';
-import camera from './camera.svg';
-import react from './react.svg';
-import { IconButton } from '@material-ui/core';
-import './App.css';
+import React, { Component } from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={react} className="App-logo" alt="react" />
-        <p>
-          { Date().toLocaleString() }
-        </p>
+import Home from "./components/home/Home";
+import Camera from "./components/camera/Camera";
+import Can from "./components/can/Can";
+import Settings from "./components/settings/Settings";
+import Error from "./components/error/Error";
+import Navigation from "./components/navigation/Navigation";
+
+class App extends Component {
+  render() {
+    return (
+      <BrowserRouter>
         <div>
-          <IconButton color="primary" aria-label="camera view">
-            <img src={camera} className="Camera-logo" alt="camera" />           
-          </IconButton>
+          <Navigation />
+          <Switch>
+            <Route path="/" component={Home} exact />
+            <Route path="/camera" component={Camera} />
+            <Route path="/CAN" component={Can} />
+            <Route path="/settings" component={Settings} />
+            <Route component={Error} />
+          </Switch>
         </div>
-        <div>
-          Icon from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
-        </div> 
-      </header>
-    </div>
-  );
+      </BrowserRouter>
+    );
+  }
 }
 
 export default App;
