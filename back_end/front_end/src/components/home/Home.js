@@ -8,7 +8,6 @@ const home = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <p>{Date().toLocaleString()}</p>
         <div>
           <IconButton color="primary" aria-label="camera view" href="/camera">
             <img src={camera} className="App-logo" alt="camera" />
