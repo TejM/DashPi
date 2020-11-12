@@ -10,7 +10,7 @@ const home = () => {
       <header className="App-header">
         <p>{Date().toLocaleString()}</p>
         <div>
-          <IconButton color="primary" aria-label="camera view" href="/camera">
+          <IconButton color="primary" aria-label="camera view" href="http://localhost:8888/">
             <img src={camera} className="App-logo" alt="camera" />
           </IconButton>
           <IconButton color="primary" aria-label="can view" href="/CAN">
