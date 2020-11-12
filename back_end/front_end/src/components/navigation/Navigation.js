@@ -18,7 +18,11 @@ const Navigation = () => {
       <button class="button forward-button" onClick={() => history.goForward()}>
         Forward
       </button>
-      <Clock format={"HH:mm:ss"} ticking={true} timezone={"US/Pacific"} />
+      <Clock
+        format={"dddd, MMMM Do YYYY, h:mm:ss a"}
+        ticking={true}
+        timezone={"US/Pacific"}
+      />
     </div>
   );
 };
