@@ -1,0 +1,47 @@
+<!-- This file is generates the camera view page, for the following path http://localhost:8888/.
+It derives a lot of its functionality from Javascript files which are invoked here. This file works
+in conjunction with the UV4l server. Read the accompanying ReadMe file in the directory for things
+to make sense.-->
+
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset='utf-8' />
+        <title>Camera</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <style>
+	    container{
+	        overflow:hidden;
+	        display:block;
+	        height: 40px;
+	    }
+            #stop {
+                display:inline-block;
+            }
+	    #v {
+		width: 790px;
+		height: 430px;
+		object-fit: cover;
+	    }
+            /*canvas { border:8px solid #fff;}*/
+            button {
+                border:none;
+                display:block;
+                padding:0.5em 1em;
+                /* margin:1% auto 0; */
+                cursor:pointer;
+                color:#fff;
+                background-color:#9f361b;
+            }
+            button:active { background-color:#e44d26; }
+        </style>
+	    <script src='adapter.js'></script>
+        <script src='signalling.js'></script>
+        <script src='main.js'></script>
+
+    </head>
+    <body>
+        <video id='v' playsinline autoplay muted="muted"></video>
+	<button id='stop'>Back</button>
+    </body>
+</html>
