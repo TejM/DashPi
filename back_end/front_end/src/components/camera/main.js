@@ -1,3 +1,10 @@
+/*
+ * This is a helper javascript file that containts helper method to handle the stream from the webrtc server.
+ * The startPlay() and stopPlay() perform the functions of starting and stopping the stream from the webrtc server 
+ * which is running on localhost:8888. The functions are inturned called by the camera.html file which consumes the
+ * stream and displays it on the page as video.
+ */
+
 (function () {
 
     var signalObj = null;
@@ -15,7 +22,7 @@
 
         signalObj = new signal(wsurl,
             function (stream) {
-                console.log('got a stream!');
+                console.log('websocket opened');
                 video.srcObject = stream;
                 video.play();
             },
@@ -24,7 +31,7 @@
                 signalObj = null;
             },
             function () {
-                console.log('websocket closed. bye bye!');
+                console.log('websocket closed');
                 video.srcObject = null;
                 signalObj = null;
             },
@@ -42,7 +49,7 @@
     }
 
     window.addEventListener('DOMContentLoaded', function () {
-	console.log("hello");
+	console.log("DOM Content Loaded");
 	startPlay();
         var start = document.getElementById('start');
         if (start) {
